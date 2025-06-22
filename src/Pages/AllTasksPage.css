@@ -1,0 +1,206 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+/* 🔶 Summary Cards */
+.dashboard-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.summary-card {
+  flex: 1 1 150px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  color: white;
+  min-width: 120px;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.summary-card.active {
+  outline: 3px solid #343a40;
+}
+
+.summary-card .card-label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.summary-card .card-count {
+  font-size: 20px;
+}
+
+/* 🎨 Card Colors */
+.summary-card:nth-child(1) {
+  background-color: #adb5bd; /* All - light gray */
+}
+.summary-card:nth-child(2) {
+  background-color: #0d6efd; /* Open - blue */
+}
+.summary-card:nth-child(3) {
+  background-color: #ffc107; /* In Review - yellow */
+  color: black;
+}
+.summary-card:nth-child(4) {
+  background-color: #28a745; /* Approved - green */
+}
+.summary-card:nth-child(5) {
+  background-color: #dc3545; /* Rejected - red */
+}
+.summary-card:nth-child(6) {
+  background-color: #6c757d; /* Expired - dark gray */
+}
+
+/* 🔍 Filter Panel */
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  background: #f1f3f5;
+  padding: 12px;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.filter-panel input,
+.filter-panel select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 160px;
+}
+
+.filter-panel label {
+  font-size: 14px;
+}
+
+.filter-panel button {
+  padding: 7px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-panel button:hover {
+  background-color: #0056b3;
+}
+
+/* 📋 Table */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 10px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 10px 14px;
+  border: 1px solid #dee2e6;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dashboard-table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+/* 🔽 Expandable Rows */
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clickable-row:hover {
+  background-color: #f6faff;
+}
+
+.expanded-row td {
+  background-color: #f2f8ff;
+  padding: 12px 16px;
+}
+
+/* 🟩 Status Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 12px;
+  margin: 2px 2px 0 0;
+}
+
+.badge.green {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge.red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge.grey {
+  background-color: #adb5bd;
+  color: black;
+}
+
+/* 🔻 Pagination */
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: white;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pagination-controls button.active,
+.pagination-controls button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+  .summary-card {
+    flex: 1 1 45%;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .filter-panel input,
+  .filter-panel select {
+    min-width: 130px;
+  }
+}
